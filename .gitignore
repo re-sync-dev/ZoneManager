@@ -1,0 +1,8 @@
+# Directories
+build/*
+Packages
+
+# Files
+*.lock
+*.rbxm*
+sourcemap.json

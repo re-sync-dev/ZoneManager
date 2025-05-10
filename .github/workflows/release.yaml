@@ -1,0 +1,36 @@
+name: "tagged-release"
+
+on:
+    push:
+        branches:
+            - "main"
+jobs:
+    tagged-release:
+        name: "Tagged Release"
+        runs-on: "ubuntu-latest"
+
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v3
+
+            - uses: CompeyDev/setup-rokit@v0.1.2
+              name: Setup Rokit
+              with:
+                  token: ${{ github.token }}
+
+            - name: "Build"
+              run: |
+                  cp src/init.luau ZoneManager.luau
+
+                  wally install
+                  rojo build build.project.json -o ZoneManager.rbxm
+
+            - uses: "marvinpinto/action-automatic-releases@latest"
+              with:
+                  repo_token: "${{ secrets.GITHUB_TOKEN }}"
+                  prerelease: false
+                  automatic_release_tag: "Latest"
+                  files: |
+                      ZoneManager.luau
+                      ZoneManager.rbxm
+                      LICENSE

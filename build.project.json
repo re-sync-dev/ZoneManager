@@ -1,0 +1,10 @@
+{
+	"name": "ZoneManager",
+	"tree": {
+		"$path": "src",
+
+		"Packages": {
+			"$path": "Packages"
+		}
+	}
+}

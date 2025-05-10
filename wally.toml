@@ -1,0 +1,14 @@
+[package]
+name = "vyon/zonemanager"
+description = "Simple and straight forward zone management module"
+version = "0.1.3"
+registry = "https://github.com/UpliftGames/wally-index"
+license = "MIT"
+realm = "shared"
+authors = ["Vyon (https://github.com/Vyon)"]
+
+exclude = ["**"]
+include = ["src", "src/*", "default.project.json", "wally.toml"]
+
+[dependencies]
+Signal = "data-oriented-house/lemonsignal@1.10.0"

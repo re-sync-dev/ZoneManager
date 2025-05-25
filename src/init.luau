@@ -157,7 +157,7 @@ ZoneManager.OnEntered = Signal.new()
 --[=[
 
 	@within ZoneManager
-	@prop OnEntered Signal<(Player, ZoneInfo)>
+	@prop OnExited Signal<(Player, ZoneInfo)>
 
 	Fires when a player exits a zone
 
